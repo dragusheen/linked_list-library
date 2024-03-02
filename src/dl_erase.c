@@ -25,6 +25,7 @@ void dl_erase(lnode_t **li, void *ref,
         *li = curr->next;
     else
         prev->next = curr->next;
-    del(curr->data);
+    if (del != NULL)
+        del(curr->data);
     free(curr);
 }

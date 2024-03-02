@@ -23,3 +23,14 @@ void dl_push_back(lnode_t **head, void *data)
     for (; tmp->next != NULL; tmp = tmp->next);
     tmp->next = new_node;
 }
+
+void dl_push_front(lnode_t **head, void *data)
+{
+    lnode_t *new_node = malloc(sizeof(lnode_t));
+
+    if (new_node == NULL)
+        return;
+    new_node->data = data;
+    new_node->next = *head;
+    *head = new_node;
+}

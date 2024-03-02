@@ -5,7 +5,7 @@
 ## makefile of the library
 ##
 
-SRC	=	src/dl_apply_data.c	\
+SRC	=	src/dl_apply.c		\
 		src/dl_clear.c		\
 		src/dl_empty.c		\
 		src/dl_erase.c		\
@@ -13,14 +13,12 @@ SRC	=	src/dl_apply_data.c	\
 		src/dl_find.c		\
 		src/dl_insert.c		\
 		src/dl_length.c		\
-		src/dl_pop_back.c	\
-		src/dl_pop_front.c	\
-		src/dl_push_back.c	\
-		src/dl_push_front.c	\
+		src/dl_pop.c		\
+		src/dl_push.c		\
 
 OBJ	=	$(SRC:%.c=%.o)
 
-NAME	=	libdl.a
+NAME	=	libdlist.a
 
 FLAGS	=	-I./include	\
 			-Wall		\
@@ -46,3 +44,7 @@ re: fclean all
 	$(COMP) $(FLAGS) -c -o $@ $<
 
 .PHONY: all clean fclean re
+
+test: re
+	@rm -rf test
+	$(COMP) $(FLAGS) -o test main.c $(SRC) -L. -ldlist

@@ -13,7 +13,8 @@ void dl_clear(lnode_t **head, void free_func(void *))
 
     while (*head) {
         tmp = (*head)->next;
-        free_func((*head)->data);
+        if (free_func != NULL)
+            free_func((*head)->data);
         free(*head);
         *head = tmp;
     }

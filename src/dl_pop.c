@@ -27,3 +27,17 @@ void *dl_pop_back(lnode_t **head)
     free(curr);
     return data;
 }
+
+void *dl_pop_front(lnode_t **head)
+{
+    void *data;
+    lnode_t *tmp;
+
+    if (head == NULL || *head == NULL)
+        return NULL;
+    tmp = (*head)->next;
+    data = (*head)->data;
+    free(*head);
+    *head = tmp;
+    return data;
+}
