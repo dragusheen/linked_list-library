@@ -16,7 +16,7 @@ SRC	=	src/dl_apply.c		\
 		src/dl_pop.c		\
 		src/dl_push.c		\
 
-OBJ	=	$(SRC:%.c=%.o)
+OBJ 	= 	$(patsubst src/%.c,object/%.o,$(SRC))
 
 NAME	=	libdlist.a
 
@@ -40,8 +40,9 @@ fclean: clean
 
 re: fclean all
 
-%.o: %.c
-	$(COMP) $(FLAGS) -c -o $@ $<
+object/%.o: src/%.c
+	@mkdir -p $(@D)
+	@$(COMP) $(FLAGS) $(LIBS) -g3 -c -o $@ $<
 
 .PHONY: all clean fclean re
 
