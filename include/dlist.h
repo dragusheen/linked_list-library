@@ -52,6 +52,7 @@ void dl_apply_data(lnode_t *head, void func(void *));
 */
 void dl_apply_node(lnode_t *head, void func(lnode_t *));
 
+
 /**
  * @brief Clears the linked list and send the data of each element to the
  * given function.
@@ -65,6 +66,7 @@ void dl_apply_node(lnode_t *head, void func(lnode_t *));
 */
 void dl_clear(lnode_t **head, void free_func(void *));
 
+
 /**
  * @brief Checks if the linked list is empty.
  *
@@ -76,6 +78,7 @@ void dl_clear(lnode_t **head, void free_func(void *));
  * @return Return true if the list is empty, false otherwise.
 */
 bool dl_empty(lnode_t *head);
+
 
 /**
  * @brief Erases an element from the linked list.
@@ -94,6 +97,7 @@ bool dl_empty(lnode_t *head);
 void dl_erase(lnode_t **head, void *ref,
     bool cmp(void *, void *), void del(void *));
 
+
 /**
  * @brief Extracts an element from the linked list.
  *
@@ -110,6 +114,7 @@ void dl_erase(lnode_t **head, void *ref,
  * was not found or in case of error
 */
 void *dl_extract(lnode_t **head, void *ref, bool cmp(void *, void *));
+
 
 /**
  * @brief Finds the data of an element in the linked list.
@@ -145,6 +150,7 @@ void *dl_find_data(lnode_t *head, void *ref, bool cmp(void *, void *));
 */
 lnode_t *dl_find_node(lnode_t *head, void *ref, bool cmp(void *, void *));
 
+
 /**
  * @brief Get the data of the element at the specified index.
  *
@@ -167,6 +173,7 @@ void *dl_get_data(lnode_t *head, int index);
  */
 lnode_t *dl_get_node(lnode_t *head, int index);
 
+
 /**
  * @brief Inserts a new element in the linked list.
  *
@@ -181,6 +188,7 @@ lnode_t *dl_get_node(lnode_t *head, int index);
 */
 void dl_insert(lnode_t **head, void *data, bool cmp(void *, void *));
 
+
 /**
  * @brief Returns the length of the linked list.
  *
@@ -193,6 +201,7 @@ void dl_insert(lnode_t **head, void *data, bool cmp(void *, void *));
  * of error.
 */
 int dl_length(lnode_t *head);
+
 
 /**
  * @brief Removes the last element of the linked list and returns its data.
@@ -220,6 +229,7 @@ void *dl_pop_back(lnode_t **head);
 */
 void *dl_pop_front(lnode_t **head);
 
+
 /**
  * @brief Adds a new element at the end of the linked list.
  *
@@ -241,6 +251,27 @@ void dl_push_back(lnode_t **head, void *data);
  * at the end. If this is not the case, the behavior is undefined.
  */
 void dl_push_front(lnode_t **head, void *data);
+
+
+/**
+ * @brief Returns the data of a random element in the linked list.
+ *
+ * @param head A pointer to the head of the linked list.
+ *
+ * @return Return the data of a random element in the list. NULL if the list
+ * is empty or in case of error.
+ */
+void *dl_random_data(lnode_t *head);
+
+/**
+ * @brief Returns a random element in the linked list.
+ *
+ * @param head A pointer to the head of the linked list.
+ *
+ * @return Return a random element in the list. NULL if the list is empty
+ * or in case of error.
+ */
+lnode_t *dl_random_node(lnode_t *head);
 
 
 #endif /* MY_FTP_H_ */
