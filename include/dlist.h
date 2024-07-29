@@ -44,8 +44,8 @@ void dl_apply_data(lnode_t *head, void func(void *));
  * the node. Do nothing if the list is empty or if the given function is NULL.
  *
  * @param head A pointer to the head of the linked list.
- * @param func A function that takes a lnode_t pointer as an argument and returns
- * void.
+ * @param func A function that takes a lnode_t pointer as an argument and
+ * returns void.
  *
  * @warning The function assumes that the given list is valid with a NULL at
  * the end. If this is not the case, the behavior is undefined.
