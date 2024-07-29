@@ -13,6 +13,7 @@
     #include <stdbool.h>
     #include <stddef.h>
     #include <stdlib.h>
+    #include <time.h>
 
 
     /*  ---- STRUCTURE ----*/
@@ -260,6 +261,9 @@ void dl_push_front(lnode_t **head, void *data);
  *
  * @return Return the data of a random element in the list. NULL if the list
  * is empty or in case of error.
+ *
+ * @warning The function uses the rand() function from the C standard library.
+ * It is recommended to call srand() before using this function.
  */
 void *dl_random_data(lnode_t *head);
 
@@ -270,6 +274,9 @@ void *dl_random_data(lnode_t *head);
  *
  * @return Return a random element in the list. NULL if the list is empty
  * or in case of error.
+ *
+ * @warning The function uses the rand() function from the C standard library.
+ * It is recommended to call srand() before using this function.
  */
 lnode_t *dl_random_node(lnode_t *head);
 

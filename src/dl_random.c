@@ -12,8 +12,7 @@ void *dl_random_data(lnode_t *head)
     int index = 0;
 
     if (head == NULL)
-        return;
-    srand(time(NULL));
+        return NULL;
     index = rand() % dl_length(head);
     return dl_get_data(head, index);
 }
@@ -23,8 +22,7 @@ lnode_t *dl_random_node(lnode_t *head)
     int index = 0;
 
     if (head == NULL)
-        return;
-    srand(time(NULL));
+        return NULL;
     index = rand() % dl_length(head);
     return dl_get_node(head, index);
 }
