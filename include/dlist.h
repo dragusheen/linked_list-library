@@ -146,6 +146,28 @@ void *dl_find_data(lnode_t *head, void *ref, bool cmp(void *, void *));
 lnode_t *dl_find_node(lnode_t *head, void *ref, bool cmp(void *, void *));
 
 /**
+ * @brief Get the data of the element at the specified index.
+ *
+ * @param head A pointer to the head of the linked list.
+ * @param index The index of the element to get.
+ *
+ * @return Return the data of the element at the specified index. NULL if the
+ * index is out of range or in case of error.
+ */
+void *dl_get_data(lnode_t *head, int index);
+
+/**
+ * @brief Get the element at the specified index.
+ *
+ * @param head A pointer to the head of the linked list.
+ * @param index The index of the element to get.
+ *
+ * @return Return the element at the specified index. NULL if the index is
+ * out of range or in case of error.
+ */
+lnode_t *dl_get_node(lnode_t *head, int index);
+
+/**
  * @brief Inserts a new element in the linked list.
  *
  * @param head A pointer to the head of the linked list.
