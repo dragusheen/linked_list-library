@@ -33,7 +33,8 @@ $(NAME):	$(OBJ)
 	@ar rc $(NAME) $(OBJ)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ)
+	@rm -rf object
 
 fclean: clean
 	@rm -f $(NAME)
